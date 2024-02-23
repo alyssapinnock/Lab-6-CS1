@@ -17,20 +17,20 @@ then the function should return -1.
 int search(int numbers[], int low, int high, int value) 
 {
 	int mid;
-	if (low <= high){
-		mid = (low + high)/2;
-		if (value < numbers[mid]){
-			return search(numbers, low, mid-1, value);
-		}
-		else if (value > numbers[mid]){
-			return search(numbers, mid + 1, high, value);
-		}
-		else
-			return -1;
-
+	if(low > high){ // Checking first to make sure it is a valid range
+		return -1;
 	}
-
-	return 0;
+	if (low <= high){
+		mid = (high + low)/2;
+		if (numbers[mid] == value){ // Returning mid if that index is equal to value
+			return mid;
+		}
+		else if (numbers[mid] > value){ // Searching lower part of array
+			return search(numbers, low, mid - 1, value);
+		}
+		else // Searching higher part of array
+			return search(numbers, mid + 1, high, value);
+	}
 }
 
 void printArray(int numbers[], int sz)
