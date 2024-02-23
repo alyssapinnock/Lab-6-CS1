@@ -16,14 +16,21 @@ then the function should return -1.
 
 int search(int numbers[], int low, int high, int value) 
 {
-	int *plow = low;
-	int *phigh = high
+	int mid;
+	if (low <= high){
+		mid = (low + high)/2;
+		if (value < numbers[mid]){
+			return search(numbers, low, mid-1, value);
+		}
+		else if (value > numbers[mid]){
+			return search(numbers, mid + 1, high, value);
+		}
+		else
+			return -1;
 
-	if (value->numbers[] == NULL){
-		return -1;
 	}
 
-	return -1;
+	return 0;
 }
 
 void printArray(int numbers[], int sz)
