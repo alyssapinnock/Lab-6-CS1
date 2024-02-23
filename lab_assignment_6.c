@@ -1,7 +1,28 @@
+/*
+
+Lab 6 - Computer Science 1
+Alyssa Pinnock
+2/22/24
+
+Instructions: Write an efficient recursive function that takes in a sorted array of numbers,
+two integers, low and high, representing indexes into the array, and another integer, value,
+and returns the index in the array where value is found in the array in between index low and
+high, inclusive. If value is NOT found in the array in between indexes low and high, inclusive,
+then the function should return -1. 
+
+*/
+
 #include <stdio.h>
 
 int search(int numbers[], int low, int high, int value) 
 {
+	int *plow = low;
+	int *phigh = high
+
+	if (value->numbers[] == NULL){
+		return -1;
+	}
+
 	return -1;
 }
 
